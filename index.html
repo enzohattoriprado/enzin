@@ -43,89 +43,60 @@
 <li>Helen Wills: 19 títulos</li>
 <li>Pete Sampras: 14 títulos</li>
 </ul>
+
 <section class="torneios">
-    <h2>🏆 Os melhores torneios de tênis</h2>
-    <p>
-        Clique em um torneio para conhecer sua história,
-        sua superfície e suas principais características.
-    </p>
+    <h2>🏆 Conheça os quatro Grand Slams</h2>
+    <p>Descubra a história e as características dos maiores torneios do tênis mundial.</p>
 
     <div class="lista-torneios">
 
-        <div class="torneio" onclick="mostrarTorneio('australia')">
-            <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=600"
-                 alt="Quadra de tênis">
+        <div class="torneio">
             <h3>🇦🇺 Australian Open</h3>
-            <p>Janeiro · Quadra dura</p>
-            <button>Saiba mais</button>
+            <p><strong>Local:</strong> Melbourne, Austrália</p>
+            <p><strong>Quadra:</strong> Piso duro</p>
+            <p>É o primeiro Grand Slam da temporada e acontece geralmente em janeiro.</p>
+            <a href="https://www.youtube.com/results?search_query=Australian+Open+explained+history+surface"
+               target="_blank" rel="noopener noreferrer" class="botao-video">
+                ▶ Assistir à explicação
+            </a>
         </div>
 
-        <div class="torneio" onclick="mostrarTorneio('roland')">
-            <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=600"
-                 alt="Quadra de tênis">
+        <div class="torneio">
             <h3>🇫🇷 Roland Garros</h3>
-            <p>Maio e junho · Saibro</p>
-            <button>Saiba mais</button>
+            <p><strong>Local:</strong> Paris, França</p>
+            <p><strong>Quadra:</strong> Saibro</p>
+            <p>É famoso pelos longos rallies e pela exigência física das partidas no saibro.</p>
+            <a href="https://www.youtube.com/results?search_query=Roland+Garros+explained+history+clay+court"
+               target="_blank" rel="noopener noreferrer" class="botao-video">
+                ▶ Assistir à explicação
+            </a>
         </div>
 
-        <div class="torneio" onclick="mostrarTorneio('wimbledon')">
-            <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=600"
-                 alt="Quadra de tênis">
+        <div class="torneio">
             <h3>🇬🇧 Wimbledon</h3>
-            <p>Junho e julho · Grama</p>
-            <button>Saiba mais</button>
+            <p><strong>Local:</strong> Londres, Inglaterra</p>
+            <p><strong>Quadra:</strong> Grama</p>
+            <p>É o torneio mais antigo do tênis e preserva tradições como o uso de roupas predominantemente brancas.</p>
+            <a href="https://www.youtube.com/results?search_query=Wimbledon+explained+history+grass+court"
+               target="_blank" rel="noopener noreferrer" class="botao-video">
+                ▶ Assistir à explicação
+            </a>
         </div>
 
-        <div class="torneio" onclick="mostrarTorneio('usopen')">
-            <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=600"
-                 alt="Quadra de tênis">
+        <div class="torneio">
             <h3>🇺🇸 US Open</h3>
-            <p>Agosto e setembro · Quadra dura</p>
-            <button>Saiba mais</button>
+            <p><strong>Local:</strong> Nova York, Estados Unidos</p>
+            <p><strong>Quadra:</strong> Piso duro</p>
+            <p>É o último Grand Slam do ano e conhecido pelo público animado e pelas partidas noturnas.</p>
+            <a href="https://www.youtube.com/watch?v=YuyffCgbR1w"
+               target="_blank" rel="noopener noreferrer" class="botao-video">
+                ▶ Assistir à história do torneio
+            </a>
+            <p class="observacao">Vídeo oficial em inglês.</p>
         </div>
 
-    </div>
-
-    <div id="detalhes-torneio" class="detalhes">
-        <h3>Escolha um torneio!</h3>
-        <p>As informações aparecerão aqui quando você clicar em um dos cartões.</p>
     </div>
 </section>
-
-<script>
-function mostrarTorneio(torneio) {
-    const detalhes = document.getElementById("detalhes-torneio");
-
-    const torneios = {
-        australia: {
-            nome: "Australian Open",
-            descricao: "É o primeiro Grand Slam do ano, realizado em Melbourne, na Austrália. É conhecido pelo calor intenso e pelas partidas emocionantes em quadras duras."
-        },
-        roland: {
-            nome: "Roland Garros",
-            descricao: "Realizado em Paris, na França, é o Grand Slam do saibro. A superfície deixa a bola mais lenta e exige resistência, estratégia e muita movimentação."
-        },
-        wimbledon: {
-            nome: "Wimbledon",
-            descricao: "Disputado em Londres, na Inglaterra, é o torneio de tênis mais antigo do mundo. É famoso por suas quadras de grama e pela tradição de roupas predominantemente brancas."
-        },
-        usopen: {
-            nome: "US Open",
-            descricao: "Realizado em Nova York, nos Estados Unidos, é o último Grand Slam da temporada. É conhecido pela atmosfera vibrante, pelo público animado e pelas partidas noturnas."
-        }
-    };
-
-    detalhes.innerHTML = `
-        <h3>${torneios[torneio].nome}</h3>
-        <p>${torneios[torneio].descricao}</p>
-    `;
-
-    detalhes.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-    });
-}
-</script>
 
 </body>
 </html>
