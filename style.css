@@ -1,39 +1,400 @@
-body{
-    background-color: rgba(3, 102, 19, 0.432);
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+:root {
+    --verde-escuro: #092e25;
+    --verde: #146b4b;
+    --verde-claro: #d9f4df;
+    --dourado: #e6c56b;
+    --fundo: #f5f7f2;
+    --branco: #ffffff;
+    --texto: #24352e;
+    --texto-suave: #69776f;
 }
-h1{
-    color:black;
-    font-style:italic;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
-h2{
-    color:rgba(190, 108, 6, 0.918);
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
 }
- .sinner {
-    width: ;
- }
+
+a {
+    text-decoration: none;
+}
+
+/* ===== CABEÇALHO ===== */
+
+.cabecalho {
+    width: 100%;
+    min-height: 76px;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--verde-escuro);
+    color: var(--branco);
+}
+
+.logo {
+    color: var(--branco);
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.cabecalho nav {
+    display: flex;
+    gap: 28px;
+}
+
+.cabecalho nav a {
+    color: #e1eee7;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.cabecalho nav a:hover {
+    color: var(--dourado);
+}
+
+/* ===== APRESENTAÇÃO ===== */
+
+.hero {
+    min-height: 480px;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(51, 132, 88, 0.5),
+            transparent 35%
+        ),
+        linear-gradient(120deg, #092e25, #12543b 70%, #1a6848);
+    color: var(--branco);
+}
+
+.hero-conteudo {
+    max-width: 720px;
+    animation: aparecer 0.8s ease-out;
+}
+
+.etiqueta,
+.subtitulo {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--dourado);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: clamp(36px, 5vw, 62px);
+    line-height: 1.12;
+}
+
+.hero h1 span {
+    color: var(--dourado);
+}
+
+.hero p {
+    max-width: 580px;
+    margin-bottom: 30px;
+    color: #e0eae4;
+    font-size: 17px;
+}
+
+/* ===== BOTÃO PRINCIPAL ===== */
+
+.botao-principal {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 8px;
+    background: var(--dourado);
+    color: var(--verde-escuro);
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.botao-principal:hover {
+    background: #f3d98d;
+    transform: translateY(-3px);
+}
+
+/* ===== SEÇÃO DE TORNEIOS ===== */
+
+.secao-torneios {
+    padding: 85px 8%;
+}
+
+.titulo-secao {
+    max-width: 680px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.titulo-secao .subtitulo,
+.sobre .subtitulo {
+    color: var(--verde);
+}
+
+.titulo-secao h2,
+.sobre h2 {
+    margin-bottom: 14px;
+    color: var(--verde-escuro);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.2;
+}
+
+.titulo-secao > p {
+    color: var(--texto-suave);
+}
+
+/* ===== CARTÕES ===== */
+
+.lista-torneios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.torneio {
+    overflow: hidden;
+    border: 1px solid #e4eae3;
+    border-radius: 16px;
+    background: var(--branco);
+    box-shadow: 0 8px 25px rgba(20, 50, 35, 0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.torneio:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 35px rgba(20, 50, 35, 0.13);
+}
+
+/* ===== ÁREAS COLORIDAS DOS CARTÕES ===== */
+
+.imagem-torneio {
+    min-height: 150px;
+    padding: 22px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imagem-australia {
+    background: linear-gradient(135deg, #087cba, #143e78);
+}
+
+.imagem-franca {
+    background: linear-gradient(135deg, #b83a42, #741e36);
+}
+
+.imagem-inglaterra {
+    background: linear-gradient(135deg, #38744b, #17432e);
+}
+
+.imagem-eua {
+    background: linear-gradient(135deg, #3157a4, #172c59);
+}
+
+.numero {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.bandeira {
+    font-size: 48px;
+    filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.15));
+}
+
+/* ===== CONTEÚDO DOS CARTÕES ===== */
+
+.conteudo-torneio {
+    padding: 27px;
+}
+
+.categoria {
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.conteudo-torneio h3 {
+    margin: 7px 0 17px;
+    color: var(--verde-escuro);
+    font-size: 25px;
+}
+
+.conteudo-torneio > p {
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+.conteudo-torneio strong {
+    color: var(--verde-escuro);
+}
+
+.conteudo-torneio .descricao {
+    margin: 18px 0 22px;
+    color: var(--texto-suave);
+    line-height: 1.8;
+}
 
 .botao-video {
     display: inline-block;
-    background-color: #146b3a;
-    color: white;
-    padding: 12px 16px;
-    margin-top: 10px;
-    border-radius: 8px;
-    text-decoration: none;
+    padding: 11px 15px;
+    border: 1px solid var(--verde);
+    border-radius: 7px;
+    color: var(--verde);
+    font-size: 13px;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
 .botao-video:hover {
-    background-color: #0b4826;
-    transform: scale(1.04);
+    background: var(--verde);
+    color: var(--branco);
 }
 
 .observacao {
+    display: block;
+    margin-top: 10px;
+    color: var(--texto-suave);
     font-size: 12px;
-    color: #555;
 }
 
-.torneio p {
-    line-height: 1.5;
+/* ===== SOBRE OS GRAND SLAMS ===== */
+
+.sobre {
+    padding: 75px 8%;
+    background: var(--verde-claro);
+    text-align: center;
+}
+
+.sobre p {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    color: #465a4d;
+    line-height: 1.9;
+}
+
+.sobre .botao-principal {
+    background: var(--verde-escuro);
+    color: var(--branco);
+}
+
+.sobre .botao-principal:hover {
+    background: var(--verde);
+}
+
+/* ===== RODAPÉ ===== */
+
+.rodape {
+    padding: 30px 8%;
+    background: var(--verde-escuro);
+    color: #e0eae4;
+    text-align: center;
+}
+
+.rodape p:first-child {
+    margin-bottom: 5px;
+    color: var(--dourado);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.rodape p:last-child {
+    font-size: 13px;
+}
+
+/* ===== ANIMAÇÃO ===== */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== TABLETS E CELULARES ===== */
+
+@media (max-width: 768px) {
+    .cabecalho {
+        padding: 18px 5%;
+        flex-direction: column;
+    }
+
+    .cabecalho nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 420px;
+        padding: 70px 6%;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .secao-torneios {
+        padding: 60px 5%;
+    }
+
+    .lista-torneios {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .imagem-torneio {
+        min-height: 125px;
+    }
+
+    .sobre {
+        padding: 60px 6%;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo {
+        font-size: 16px;
+    }
+
+    .cabecalho nav {
+        gap: 12px;
+    }
+
+    .cabecalho nav a {
+        font-size: 12px;
+    }
+
+    .conteudo-torneio {
+        padding: 20px;
+    }
+
+    .conteudo-torneio h3 {
+        font-size: 22px;
+    }
 }
